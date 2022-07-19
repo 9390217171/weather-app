@@ -1,6 +1,10 @@
 const API_KEY='292c0ca9e536b3b79944b60354571915';
 const BASE_URL='https://api.openweathermap.org/data/2.5/'
 const locate = document.querySelector(".main");
+
+const liveLocationBtn=document.querySelector('.live-location-btn');
+liveLocationBtn.addEventListener('click',getUserCoordinates);
+
 function getUserCoordinates(){
     navigator.geolocation.getCurrentPosition(function(position) {
         let lat = position.coords.latitude.toFixed(2);
